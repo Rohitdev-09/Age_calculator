@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Age Calculator</h1>
+        <form action="/" method="POST" class="calculator-form">
+            <div class="input-group">
+                <label for="birthdate">Enter Your Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" value="{{ birthdate or '' }}" required>
+            </div>
+            <button type="submit" class="btn">Calculate Age</button>
+        </form>
+
+        {% if result %}
+            {% if result.error %}
+                <div class="result-card error">
+                    <p>{{ result.error }}</p>
+                </div>
+            {% else %}
+                <div class="result-card">
+                    <h2>Your Exact Age</h2>
+                    <div class="age-stats">
+                        <div class="stat-box">
+                            <span class="number">{{ result.years }}</span>
+                            <span class="label">Years</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">{{ result.months }}</span>
+                            <span class="label">Months</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">{{ result.days }}</span>
+                            <span class="label">Days</span>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
