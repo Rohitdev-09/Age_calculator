@@ -5,8 +5,6 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-
-
 try:
     from dateutil.relativedelta import relativedelta
 except ImportError:
@@ -90,6 +88,8 @@ async def calculate_age(request: Request, birthdate: str = Form(...)):
         name="index.html",
         context={"request": request, "result": result, "birthdate": birthdate},
     )
+
+
 
 
 
