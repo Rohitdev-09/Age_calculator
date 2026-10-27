@@ -41,6 +41,7 @@ def compute_age(birth_date: date, today: date) -> tuple[int, int, int]:
 
 # End points of api ---
 
+
 @app.get("/static/{file_name}")
 async def get_static_file(file_name: str):
     file_path = BASE_DIR / file_name

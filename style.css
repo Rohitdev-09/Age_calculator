@@ -14,7 +14,6 @@ body {
     color: #333;
 }
 
-
 .container {
     background: #ffffff;
     padding: 40px;
@@ -117,6 +116,8 @@ input[type="date"]:focus {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
+
 
 .error {
     background: #fff5f5;
