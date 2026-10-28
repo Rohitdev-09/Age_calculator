@@ -38,8 +38,8 @@ def compute_age(birth_date: date, today: date) -> tuple[int, int, int]:
 
     return y, m, d
 
+# End _points of api ---
 
-# End points of api ---
 
 
 @app.get("/static/{file_name}")
