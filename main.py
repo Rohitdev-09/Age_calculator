@@ -38,9 +38,8 @@ def compute_age(birth_date: date, today: date) -> tuple[int, int, int]:
 
     return y, m, d
 
-# End _points of api ---
-
-
+# End_points of api ---
+#------------------------------------------------------------------------------
 
 @app.get("/static/{file_name}")
 async def get_static_file(file_name: str):
@@ -91,8 +90,3 @@ async def calculate_age(request: Request, birthdate: str = Form(...)):
         name="index.html",
         context={"request": request, "result": result, "birthdate": birthdate},
     )
-
-
-
-
-
